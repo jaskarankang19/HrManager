@@ -10,6 +10,7 @@ import Repository.DepartmentRepository;
 import Repository.EmployeeRepository;
 import Repository.LocationRespository;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,6 +45,44 @@ public class HRManagerService {
 
         Iterable<EmployeesEntity> iterable = employeeRepository.findAll();
         iterable.forEach(emp -> logger.info(emp.getFirstName()));
+    }
+
+    public void Question1(){
+        logger.info("\n*****************\nQuestion 1: Employees with salary ranging $9-17k\n*****************");
+
+        try {
+            List<EmployeesEntity> temp = employeeRepository.findEmployeesEntitiesBySalaryBetween(9000.0, 17000.0);
+            temp.forEach(emp -> logger.info(emp.toString()));
+
+        } catch (Exception e){
+            logger.error(e.getMessage(), e);
+        }
+    }
+
+    public void Question2(){
+        logger.info("\n*****************\nQuestion 2: First Name ending in 'A'\n*****************");
+
+        try {
+            List<EmployeesEntity> temp = employeeRepository.findByFirstNameEndingWith("a");
+            temp.forEach(emp -> logger.info(emp.toString()));
+
+        } catch (Exception e){
+            logger.error(e.getMessage(), e);
+        }
+
+    }
+
+    public void Question3(){
+        logger.info("\n*****************\nQuestion 3: All Employees in Accounting\n*****************");
+
+        try {
+            List<EmployeesEntity> temp = employeeRepository.findByDepartmentId(11);
+            temp.forEach(emp -> logger.info(emp.toString()));
+
+        } catch (Exception e){
+            logger.error(e.getMessage(), e);
+        }
+
     }
 
     public void Question4(){
