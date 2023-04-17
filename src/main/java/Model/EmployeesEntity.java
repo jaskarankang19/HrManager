@@ -144,4 +144,13 @@ public class EmployeesEntity {
     public int hashCode() {
         return Objects.hash(employeeId, firstName, lastName, email, phoneNumber, hireDate, jobId, salary, commissionPct, managerId, departmentId);
     }
+
+    @Override
+    public String toString() {
+        return "EmployeesEntity [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName
+                + ", email=" + email + ", phoneNumber=" + phoneNumber + ", hireDate=" + hireDate + ", jobId=" + jobId
+                + ", salary=" + salary + ", commissionPct=" + commissionPct + ", managerId=" + managerId
+                + ", departmentId=" + departmentId + "]";
+    }
+    
 }

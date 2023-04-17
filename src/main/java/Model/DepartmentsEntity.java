@@ -54,4 +54,11 @@ public class DepartmentsEntity {
     public int hashCode() {
         return Objects.hash(departmentId, departmentName, locationId);
     }
+
+    @Override
+    public String toString() {
+        return "DepartmentsEntity [departmentId=" + departmentId + ", departmentName=" + departmentName
+                + ", locationId=" + locationId + "]";
+    }
+    
 }
