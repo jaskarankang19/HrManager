@@ -18,7 +18,7 @@ public class HrManagerApplication {
 
 		ApplicationContext ctx = SpringApplication.run(HrManagerApplication.class, args);
 		HRManagerService service = (HRManagerService)  ctx.getBean("HRManagerService");
-		// service.Test();
+
 		service.Question1();
 		service.Question2();
 		service.Question3();
@@ -26,6 +26,9 @@ public class HrManagerApplication {
 		service.Question5();
 		service.Question6();
 		service.Question7();
+		service.Question8();
+		service.Question9();
+		service.Question10();
 	}
 
 }
